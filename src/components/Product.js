@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { Button } from './Button';
 
 const styles = {
     product: {
@@ -9,9 +10,9 @@ const styles = {
         padding: '10px 15px',
         margin: '10px 15px',
     },
-    img:  {
+    img: {
         width:  '100%',
-    }
+    },
 }
 
 class Product extends Component {
@@ -19,15 +20,10 @@ class Product extends Component {
         const {
             product,
             addToCart,
-            key,
         } = this.props;
 
         return (
-            <div
-                style={styles.product}
-                className="product-card"
-                key={key}
-            >
+            <div style={styles.product}>
                 <img
                 style={styles.img}
                     src={product.img}
@@ -35,11 +31,11 @@ class Product extends Component {
                 />
                 <h3>{product.name}</h3>
                 <p>{`$${product.price}`}</p>
-                <button
-                    onClick= {addToCart}
+                <Button
+                    onClick={() => addToCart(product)}
                 >
                     Add to cart
-                </button>
+                </Button>
             </div>
         );
     }
