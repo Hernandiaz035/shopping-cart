@@ -18,7 +18,7 @@ class Products extends Component {
         {products.map((product, idx) =>
           <Product
             product={product}
-            onClick={addToCart}
+            addToCart={addToCart}
             key={idx}
           />)}
       </div>
