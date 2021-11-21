@@ -10,17 +10,33 @@ class App extends Component {
       {name: 'Tomato', price: 1500, img: '/products/tomato.jpg'},
       {name: 'Peas', price: 800, img: '/products/peas.jpg'},
       {name: 'Lettuce', price: 500, img: '/products/lettuce.jpg'},
-    ]
+    ],
+    cart: {},
+    cartSize: 0,
   }
+
+  addToCart = (product) => {
+    let tmpCart = {};
+    if (!this.state.cart[product.name]) {
+      tmpCart = { ...this.state.cart };
+      tmpCart[product.name] = { ...product, qty: 1 };
+      this.setState({ cart: tmpCart });
+    } else {
+      tmpCart = { ...this.state.cart };
+      tmpCart[product.name].qty++;
+      this.setState({ cart: tmpCart });
+    }
+    this.setState({ cartSize: this.state.cartSize + 1 });
+  };
 
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar value={this.state.cartSize}/>
         <Layout>
           <Title />
           <Products
-            addToCart={() => console.log("Add to cart...")}
+            addToCart={this.addToCart}
             products={this.state.products}
           />
         </Layout>
