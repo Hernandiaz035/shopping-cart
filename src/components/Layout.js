@@ -1,11 +1,27 @@
 import { Component } from "react";
 
+const styles = {
+    layout: {
+        backgroundColor: '#fff',
+        color: '#02A283E',
+        alignItems: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+    },
+    container: {
+        width: '1200px',
+    },
+}
+
 class Layout extends Component{
     render() {
         return (
-            <main>
-                {this.props.children}
-            </main>
+            <div style={styles.layout}>
+                <div style={styles.container}>
+                    {this.props.children}
+                    asdf
+                </div>
+            </div>
         );
     }
 }
