@@ -20,16 +20,16 @@ const styles = {
 
 class Cart extends Component {
     render() {
-        const { value, cart } = this.props;
+        const { value, cart, onClick, isCartVisible } = this.props;
         return (
             <div>
                 <span style={styles.bubble}>
                     {value > 0 && <BubbleAlert value={value} />}
                 </span>
-                <button style={styles.cart}>
+                <button style={styles.cart} onClick={onClick}>
                     Cart
                 </button>
-                <CartDetail cart={cart} />
+                {isCartVisible ? <CartDetail cart={cart} /> : null}
             </div>
         );
     }

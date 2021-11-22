@@ -37,11 +37,11 @@ class CartDetail extends Component {
             <div style={styles.popUp}>
                 <ul style={styles.products_list}>
                     {Object.values(cart).map((p, idx) => (
-                        <il style={styles.product} key={idx}>
+                        <li style={styles.product} key={idx}>
                             <img style={styles.product_img} src={p.img} alt={p.img} />
                             <p>{p.name}</p>
                             <p>{p.qty}</p>
-                        </il>
+                        </li>
                     ))}
                 </ul>
             </div>

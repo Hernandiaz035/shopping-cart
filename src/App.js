@@ -13,6 +13,7 @@ class App extends Component {
     ],
     cart: {},
     cartSize: 0,
+    isCartVisible: false,
   }
 
   addToCart = (product) => {
@@ -32,7 +33,14 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Navbar cartSize={this.state.cartSize} cart={this.state.cart} />
+        <Navbar
+          cartSize={this.state.cartSize}
+          cart={this.state.cart}
+          isCartVisible={this.state.isCartVisible}
+          ToggleCarVisibility={() => this.setState({
+            isCartVisible: this.state.cartSize>0 && !this.state.isCartVisible
+          })}
+        />
         <Layout>
           <Title />
           <Products
