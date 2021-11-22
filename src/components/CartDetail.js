@@ -1,6 +1,5 @@
 import { Component } from 'react';
 
-
 const styles = {
     popUp: {
         backgroundColor: '#FFF',
