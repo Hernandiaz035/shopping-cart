@@ -1,3 +1,6 @@
+# Shopping Cart Sample
+This Project is a basic shopping cart UI, it has no storage, backend or API Connection. It is Class based Components practice.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
