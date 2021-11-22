@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { BubbleAlert } from './BubbleAlert';
+import { CartDetail } from './CartDetail';
 
 const styles = {
     cart: {
@@ -19,7 +20,7 @@ const styles = {
 
 class Cart extends Component {
     render() {
-        const { value } = this.props;
+        const { value, cart } = this.props;
         return (
             <div>
                 <span style={styles.bubble}>
@@ -28,6 +29,7 @@ class Cart extends Component {
                 <button style={styles.cart}>
                     Cart
                 </button>
+                <CartDetail cart={cart} />
             </div>
         );
     }

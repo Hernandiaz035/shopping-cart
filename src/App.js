@@ -32,7 +32,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Navbar cartSize={this.state.cartSize} />
+        <Navbar cartSize={this.state.cartSize} cart={this.state.cart} />
         <Layout>
           <Title />
           <Products
